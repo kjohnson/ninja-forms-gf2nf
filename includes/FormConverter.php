@@ -73,6 +73,7 @@ final class NF_GF2NF_FormConverter
                     // Convert `name` field to `firstname` field.
                     $field[ 'type' ] = 'firstname';
                     $field[ 'label' ] = $field[ 'inputs' ][ 0 ][ 'label' ];
+                    $field[ 'wrapper_class' ] = 'nf-one-half';
 
                     // Clone `firstname` field as `lastname` field.
                     $new_field = $field;
