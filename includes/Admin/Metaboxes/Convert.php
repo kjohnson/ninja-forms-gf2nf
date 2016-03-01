@@ -35,8 +35,17 @@ final class NF_GF2NF_Admin_Metaboxes_Convert
             $forms = json_decode( $import, TRUE );
 
             $converter = new NF_GF2NF_FormConverter();
+            $converted_forms = array();
             foreach( $forms as $form ){
-                $converter->convert( $form );
+                if( ! isset( $form[ 'id' ] ) ) continue;
+                $converted_forms[] = $converter->convert( $form );
+            }
+
+            if( 1 == count( $converted_forms ) ){
+                $form_id = $converted_forms[ 0 ]->get_id();
+                wp_redirect( admin_url( "admin.php?page=ninja-forms&form_id=$form_id" ) );
+            } else {
+                wp_redirect( admin_url( 'admin.php?page=ninja-forms' ) );
             }
         }
     }

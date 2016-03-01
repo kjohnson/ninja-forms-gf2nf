@@ -8,7 +8,8 @@ final class NF_GF2NF_FormConverter
 
         $fields = $this->convert_fields( $form );
         $actions = $this->convert_actions( $form );
-        $this->convert_form( $form, $fields, $actions );
+
+        return $this->convert_form( $form, $fields, $actions );
     }
 
 
