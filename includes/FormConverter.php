@@ -108,6 +108,8 @@ final class NF_GF2NF_FormConverter
             }
         }
 
+        $field[ 'key' ] = sanitize_title( $field[ 'label' ] );
+
         return $field;
     }
 
@@ -125,6 +127,7 @@ final class NF_GF2NF_FormConverter
             // TODO: only one of these will be used.
             'req' => 0,
             'required' => 0,
+            'key' => sanitize_title( $button[ 'text' ] )
         );
     }
 
