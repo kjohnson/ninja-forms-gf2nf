@@ -155,6 +155,12 @@ final class NF_GF2NF_FormConverter
             }
         }
 
+        $actions[] = array(
+            'type' => 'save',
+            'label' => __( 'Save Submission', 'ninja-forms-gf2nf' ),
+            'active' => TRUE
+        );
+
         return $actions;
     }
 
